@@ -47,7 +47,7 @@ class _Detail_pageState extends State<Detail_page> {
               "Name:${widget.selectedPet.name}",
               style: TextStyle(
                 fontSize: 20,
-                color: Color.fromARGB(255, 103, 58, 183),
+                color: Color.fromARGB(255, 153, 106, 234),
               ),
             ),
           ),
@@ -57,7 +57,7 @@ class _Detail_pageState extends State<Detail_page> {
               "Age:${widget.selectedPet.age}",
               style: TextStyle(
                 fontSize: 20,
-                color: Color.fromARGB(255, 103, 58, 183),
+                color: Color.fromARGB(255, 153, 106, 234),
               ),
             ),
           ),
@@ -67,7 +67,7 @@ class _Detail_pageState extends State<Detail_page> {
               "Price:${widget.selectedPet.price}",
               style: TextStyle(
                 fontSize: 20,
-                color: Color.fromARGB(255, 103, 58, 183),
+                color: Color.fromARGB(255, 153, 106, 234),
               ),
             ),
           ),
@@ -77,10 +77,18 @@ class _Detail_pageState extends State<Detail_page> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        Color.fromRGBO(126, 60, 122, 1)),
+                  ),
                   onPressed: adopted ? null : () => _adoptPet(context),
                   child: Text("Adopt Me"),
                 ),
                 ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        Color.fromRGBO(126, 60, 122, 1)),
+                  ),
                   onPressed: _viewHistory,
                   child: Text("View History"),
                 ),
@@ -97,16 +105,12 @@ class _Detail_pageState extends State<Detail_page> {
       adopted = true; // Mark the pet as adopted
     });
 
-    // Show a popup with the adopted message
     _showAdoptionPopup();
 
-    // Mark the pet as "Already Adopted" in the home page list
     widget.selectedPet.adoptionStatus = "Already Adopted";
 
-    // Add the adopted pet to history
     adoptedPetsHistory.add(widget.selectedPet.name);
 
-    // Save the updated history
     _saveAdoptedPetsHistory();
   }
 

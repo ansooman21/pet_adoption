@@ -19,7 +19,7 @@ class _Home_pageState extends State<Home_page> {
         title: Text(
           "Welcome to Pet-Shop!",
           style:
-              TextStyle(fontSize: 22, color: Color.fromARGB(255, 113, 4, 132)),
+              TextStyle(fontSize: 22, color: Color.fromARGB(255, 203, 82, 224)),
         ),
       ),
       body: SafeArea(

@@ -1,23 +1,30 @@
-//import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_adoption/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pet Adoption App',
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 103, 58, 183)),
-        useMaterial3: true,
+        // Light theme settings
+        primaryColor: Color.fromARGB(255, 153, 106, 234),
+        hintColor: Color.fromARGB(255, 153, 106, 234),
+        backgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.grey[100],
+      ),
+      darkTheme: ThemeData.dark().copyWith(
+        // Dark theme settings
+        primaryColor: Color.fromARGB(255, 153, 106, 234),
+        hintColor: Color.fromARGB(255, 153, 106, 234),
+        backgroundColor: Colors.grey[900],
+        scaffoldBackgroundColor: Colors.grey[850],
       ),
       home: Home_page(),
     );
