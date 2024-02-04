@@ -12,7 +12,6 @@ class Detail_page extends StatefulWidget {
 }
 
 class _Detail_pageState extends State<Detail_page> {
-  int selectedImageIndex = 0;
   bool adopted = false;
   @override
   Widget build(BuildContext context) {
@@ -20,18 +19,15 @@ class _Detail_pageState extends State<Detail_page> {
         appBar: AppBar(
           title: Text('Details'),
         ),
-        body: Card(
-          elevation: 4,
-          child: Column(
-            children: [
-              Image.network(
-                widget.selectedPet.images[selectedImageIndex],
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: 200,
-              ),
-            ],
-          ),
+        body: Column(
+          children: [
+            Image.network(
+              widget.selectedPet.urlimage,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 400,
+            ),
+          ],
         ));
   }
 }
